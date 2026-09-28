@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{BRAND}} — Humanize your thesis for GHS {{PRICE}}</title>
+  <meta name="description" content="Upload your thesis, pay GHS {{PRICE}} with Mobile Money or card, and get it back humanized within {{TURNAROUND}}.">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://js.paystack.co/v2/inline.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body data-max-mb="{{MAX_MB}}" data-price="{{PRICE}}">
+  <header class="top">
+    <div class="wrap">
+      <span class="logo">{{BRAND}}</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Turn stiff, AI-sounding writing into natural human prose.</h1>
+      <p class="lead">Upload your thesis, pay a flat <strong>GHS {{PRICE}}</strong>, and get it back humanized in your inbox within {{TURNAROUND}}.</p>
+      <ol class="steps">
+        <li><span>1</span>Upload your document</li>
+        <li><span>2</span>Pay GHS {{PRICE}} with MoMo or card</li>
+        <li><span>3</span>Receive it by email</li>
+      </ol>
+    </section>
+
+    <section class="card" id="order-card">
+      <form id="order-form" novalidate>
+        <label>Full name
+          <input name="name" autocomplete="name" required maxlength="100">
+        </label>
+        <label>Email <small>— we send the finished document here</small>
+          <input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200">
+        </label>
+        <label>WhatsApp number <small>(optional)</small>
+          <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="024 000 0000">
+        </label>
+
+        <label class="drop" id="drop">
+          <input name="file" id="file" type="file" required accept=".doc,.docx,.pdf,.odt,.rtf,.txt">
+          <span class="drop-title" id="file-name">Tap to choose your thesis</span>
+          <span class="drop-hint">Word, PDF, ODT, RTF or TXT · up to {{MAX_MB}} MB</span>
+        </label>
+
+        <label>Notes <small>(optional)</small>
+          <textarea name="notes" rows="3" maxlength="1000" placeholder="E.g. only chapters 2 and 3, keep my references as they are"></textarea>
+        </label>
+
+        <p class="error" id="error" role="alert" hidden></p>
+
+        <button type="submit" id="submit">Pay GHS {{PRICE}} &amp; submit</button>
+        <p class="fine">Payments are secured by Paystack (Mobile Money &amp; card). Your document stays confidential and is removed from our server within 48 hours of delivery.</p>
+      </form>
+
+      <div class="result" id="success" hidden>
+        <div class="tick" aria-hidden="true">✓</div>
+        <h2>Got it — thank you!</h2>
+        <p>Your payment was confirmed and your document is with us. Expect your humanized document by email within {{TURNAROUND}}.</p>
+        <p class="ref">Reference: <strong data-ref></strong></p>
+      </div>
+
+      <div class="result" id="pending" hidden>
+        <div class="tick wait" aria-hidden="true">…</div>
+        <h2>Confirming your payment</h2>
+        <p>Paystack is still confirming your payment. <strong>Please don't pay again</strong> — as soon as it's confirmed your document is sent through automatically.</p>
+        <p class="ref">Reference: <strong data-ref></strong></p>
+      </div>
+    </section>
+
+    <section class="faq">
+      <details>
+        <summary>How long does it take?</summary>
+        <p>Most documents are returned within {{TURNAROUND}}. Longer theses may take a little more time — we'll email you if so.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>With MTN MoMo, Telecel Cash, AirtelTigo Money or a bank card, through Paystack's secure checkout. You'll see a prompt on your phone to approve the payment.</p>
+      </details>
+      <details>
+        <summary>Is my work kept private?</summary>
+        <p>Yes. Your document is only used to do the work you paid for and is removed from our server within 48 hours of delivery.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span>© {{BRAND}}</span>
+    <span id="support">Questions? <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></span>
+  </footer>
+</body>
+</html>

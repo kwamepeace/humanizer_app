@@ -1,0 +1,21 @@
+{
+  "name": "humanizer-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pay a flat fee with Paystack, upload a thesis, and have it delivered privately to the owner.",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --env-file=.env --watch server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.0.12"
+  }
+}

@@ -57,7 +57,7 @@ function orderForm(overrides = {}) {
   const fields = { name: 'Ama Mensah', email: 'ama@example.com', phone: '0240000000', ...overrides };
   const form = new FormData();
   for (const [k, v] of Object.entries(fields)) if (k !== 'file' && v !== undefined) form.append(k, v);
-  const file = overrides.file ?? { name: 'thesis.docx', content: 'my thesis text' };
+  const file = 'file' in overrides ? overrides.file : { name: 'thesis.docx', content: 'my thesis text' };
   if (file) form.append('file', new Blob([file.content]), file.name);
   return form;
 }

@@ -29,13 +29,13 @@
 
     <section class="card" id="order-card">
       <form id="order-form" novalidate>
-        <label>Full name
+        <label><span>Full name</span>
           <input name="name" autocomplete="name" required maxlength="100">
         </label>
-        <label>Email <small>— we send the finished document here</small>
+        <label><span>Email <small>— we send the finished document here</small></span>
           <input name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200">
         </label>
-        <label>WhatsApp number <small>(optional)</small>
+        <label><span>WhatsApp number <small>(optional)</small></span>
           <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="024 000 0000">
         </label>
 
@@ -45,7 +45,7 @@
           <span class="drop-hint">Word, PDF, ODT, RTF or TXT · up to {{MAX_MB}} MB</span>
         </label>
 
-        <label>Notes <small>(optional)</small>
+        <label><span>Notes <small>(optional)</small></span>
           <textarea name="notes" rows="3" maxlength="1000" placeholder="E.g. only chapters 2 and 3, keep my references as they are"></textarea>
         </label>
 
